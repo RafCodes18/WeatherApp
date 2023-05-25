@@ -1,5 +1,6 @@
 body{
  background-color: #ffa304;
+ overflow: hidden;
 }
 .container{
  max-width: 400px;
@@ -52,4 +53,14 @@ body{
  background-color: #323330;
  color: white;
  transition: 0.5s ease-in-out;
+}
+
+footer{
+ font-size: x-large;
+ text-align: center;
+ color: rgb(0, 0, 0);
+}
+
+a{
+ color: blue;
 }
