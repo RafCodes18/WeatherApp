@@ -1,0 +1,86 @@
+body{
+ margin: 0;
+ font-family: 'Courier New', Courier, monospace;
+ text-align: center;
+ background-color: darkslategray;
+
+}
+
+h1{
+ color:rgb(15, 250, 15);
+ ;
+ text-shadow: 5px 5px black;
+ margin: auto;
+}
+
+.title{
+ font-size: 45px;
+ color: rgb(221, 219, 220);
+ text-shadow: none;
+ font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+}
+
+#canvas{
+ position: relative;
+ margin: 50%;
+}
+
+#button{
+ display: block;
+ position: relative;
+ margin-left: 40%;
+color: darkblue;
+background-color: rgb(109, 252, 109);
+margin-top: 20px;
+width: 230px;
+height:30px;
+font-size:20px;
+margin-bottom: 5px;
+}
+
+#button2{
+ display: block;
+ position: relative;
+ margin-left: 40%;
+color: darkblue;
+background-color: coral;
+margin-top: 2p5x;
+width: 230px;
+height:27px;
+font-size:19px;
+}
+
+
+.container{
+ display: flex;
+ flex-direction: column;
+}
+
+.header{
+ display: flex;
+ font-size: 19px;
+}
+
+.score{
+ width:100%;
+}
+
+#score{
+color:yellow;
+}
+
+.red{
+ width:100%;
+ flex: 10%;
+}
+
+.purple{
+ width:100%;
+}
+
+.board{
+
+ margin: auto;
+ flex-direction: column; 
+}
+
