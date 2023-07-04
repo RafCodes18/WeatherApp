@@ -49,6 +49,25 @@
         const stars = new THREE.Points(starsGeometry, starsMaterial);
         scene.add(stars);
 
+
+
+        //CARD UI 
+        var geometry = new THREE.PlaneGeometry(1, 1); // adjust size as needed
+
+        var material = new THREE.MeshBasicMaterial({
+            color: "rgb(128, 128, 128)", // this is gray
+            transparent: true,
+            opacity: 0.3, // adjust as needed
+            
+            side: THREE.DoubleSide
+        });
+        
+        var card = new THREE.Mesh(geometry, material);
+        scene.add(card);
+
+
+
+        //ANIMATE AND RENDER
         function animate() {
             renderer.setAnimationLoop(render);
         }
@@ -56,6 +75,8 @@
         function render() {
             renderer.render(scene, camera);
         }
+
+        
 
         animate();
 
