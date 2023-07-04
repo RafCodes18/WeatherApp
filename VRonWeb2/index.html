@@ -95,29 +95,28 @@
         }
 
 
-        //TRACK WHERE THEY POINT, RAYCASTING
         const raycaster = new THREE.Raycaster();
 
-        function update() {
-            // Update raycaster based on controller position and direction
-            if (controller1) {
-                const controllerPose = controller1.getWorldPosition(new THREE.Vector3());
-                const controllerDir = controller1.getWorldDirection(new THREE.Vector3());
-                raycaster.set(controllerPose, controllerDir);
-            }
+function update() {
+    // Update raycaster based on controller position and direction
+    if (controller1) {
+        const controllerPose = controller1.getWorldPosition(new THREE.Vector3());
+        const controllerDir = controller1.getWorldDirection(new THREE.Vector3());
+        raycaster.set(controllerPose, controllerDir);
+    }
 
-            // Check for intersections with objects in the scene
-            const intersects = raycaster.intersectObjects(scene.children);
-            if (intersects.length > 0) {
-                // Handle intersection (e.g., highlight object, show tooltip)
-            }
-        }
+    // Check for intersections with objects in the scene
+    const intersects = raycaster.intersectObjects(scene.children);
+    if (intersects.length > 0) {
+        // Handle intersection (e.g., highlight object, show tooltip)
+    }
+}
 
-        // Call the update function in your render loop
-        function render() {
-            update();
-            renderer.render(scene, camera);
-        }
+// Call the update function in your render loop
+function render2() {
+    update();
+    renderer.render(scene, camera);
+}
 
 
 
