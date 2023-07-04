@@ -58,6 +58,69 @@
         }
 
         animate();
+
+        //CONTROLLERS
+        let controller1, controller2;
+        const controllerModelFactory = new THREE.XRControllerModelFactory();
+
+        // Controller 1
+        controller1 = renderer.xr.getController(0);
+        scene.add(controller1);
+
+        const controllerGrip1 = renderer.xr.getControllerGrip(0);
+        controllerGrip1.add(controllerModelFactory.createControllerModel(controllerGrip1));
+        scene.add(controllerGrip1);
+
+        // Controller 2
+        controller2 = renderer.xr.getController(1);
+        scene.add(controller2);
+
+        const controllerGrip2 = renderer.xr.getControllerGrip(1);
+        controllerGrip2.add(controllerModelFactory.createControllerModel(controllerGrip2));
+        scene.add(controllerGrip2);
+
+        //EVENTS
+        controller1.addEventListener('selectstart', onTriggerDown);
+        controller1.addEventListener('selectend', onTriggerUp);
+
+        controller2.addEventListener('selectstart', onTriggerDown);
+        controller2.addEventListener('selectend', onTriggerUp);
+
+        function onTriggerDown(event) {
+            // Code to handle trigger press
+        }
+
+        function onTriggerUp(event) {
+            // Code to handle trigger release
+        }
+
+
+        //TRACK WHERE THEY POINT, RAYCASTING
+        const raycaster = new THREE.Raycaster();
+
+        function update() {
+            // Update raycaster based on controller position and direction
+            if (controller1) {
+                const controllerPose = controller1.getWorldPosition(new THREE.Vector3());
+                const controllerDir = controller1.getWorldDirection(new THREE.Vector3());
+                raycaster.set(controllerPose, controllerDir);
+            }
+
+            // Check for intersections with objects in the scene
+            const intersects = raycaster.intersectObjects(scene.children);
+            if (intersects.length > 0) {
+                // Handle intersection (e.g., highlight object, show tooltip)
+            }
+        }
+
+        // Call the update function in your render loop
+        function render() {
+            update();
+            renderer.render(scene, camera);
+        }
+
+
+
     </script>
 </body>
 
