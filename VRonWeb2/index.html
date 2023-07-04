@@ -63,6 +63,10 @@
         });
         
         var card = new THREE.Mesh(geometry, material);
+        card.position.y = 1.6; // Adjust to your camera height
+        card.position.z = -2; // 2 units away from the camera
+        card.rotation.x = -0.2; // slight tilt, adjust as needed
+
         scene.add(card);
 
 
