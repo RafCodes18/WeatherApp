@@ -1,0 +1,125 @@
+﻿body, html {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: hidden; /* To disable scrolling */
+    color: white;
+}
+
+.container {
+    position: relative;
+    height: 100%;
+}
+
+#bgvid {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -100;
+    transform: translateX(-50%) translateY(-50%);
+}
+#win-btn {
+     /* see-through bright green */
+    background-color: rgba(255, 21, 0, 0.5);
+    color: rgb(147, 147, 147); /* white text */
+    font-size: 2em; /* make text larger */
+    font-weight: 900;
+    padding: 20px 40px; /* increase button size */
+    border: none; /* remove border */
+    cursor: pointer; /* change cursor on hover */
+    border-radius: 10px; /* rounded corners */
+    transition: background-color 0.3s ease; /* transition effect */
+    position: absolute;
+    top: 60%;
+    left: 45%;
+    font-family: 'Della Respira', serif;
+}
+
+#win-btn:hover {
+  background-color: rgba(0, 255, 0, 0.8); /* darker green on hover */
+  box-shadow: 0px 0px 1px 1px #837a7a;
+  color: #030303;
+}
+
+.hidden {
+    display: none;
+}
+
+#congrats-modal {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    background-color: white;
+    padding: 10px;
+    border: 1px solid black;
+}
+
+footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+.achievement-box {
+    width: 5px;
+    height: 5px;
+    background-color: green;
+}
+
+.white-icon {
+    color: white;
+}
+
+#lineContainer {
+    position: fixed;
+    bottom: 0;
+    left: 10px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    padding: 0px 10px;
+    height: 20px;    
+}
+
+.line {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 0px;
+    height: 10px;
+    background-color: #fff;
+    position: relative;
+    margin-bottom: 100px;
+    z-index: -999;
+}
+
+.block-container {
+    position: absolute;
+    bottom: 15px; /* Height of the line + height of the day-label */
+}
+
+.day-label {
+    position: absolute;
+    bottom: 0;
+}
+
+.block-container {
+    position: absolute;
+    bottom: 10px; /* Height of the line */
+    left: 50%; /* Center the blocks horizontally */
+    transform: translateX(-50%); /* Center the blocks horizontally */
+}
+
+.block {
+    width: 25px;
+    height: 25px;
+    background-color: lime;
+    margin-top: 5px; /* Margin between blocks */
+    margin-bottom: 12px;
+}
